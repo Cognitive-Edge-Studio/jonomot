@@ -1,0 +1,1685 @@
+{
+  "schemaVersion": 1,
+  "revision": 1,
+  "resetGeneration": 0,
+  "users": [
+    {
+      "id": "user-karim",
+      "name": "Karim",
+      "role": "researcher",
+      "verified": true,
+      "phone": "+8801700000001",
+      "onboardingComplete": true,
+      "identityStatus": "Verified",
+      "preferredLanguage": "en"
+    },
+    {
+      "id": "user-rina",
+      "name": "Rina",
+      "role": "respondent",
+      "verified": false,
+      "phone": "+8801700000002",
+      "consentAccepted": false,
+      "onboardingComplete": false,
+      "identityStatus": "NotStarted",
+      "accountFlags": [],
+      "preferredLanguage": "bn"
+    },
+    {
+      "id": "user-admin",
+      "name": "Admin reviewer",
+      "role": "admin",
+      "verified": true,
+      "preferredLanguage": "en"
+    }
+  ],
+  "surveys": [
+    {
+      "id": "survey-shopping-live",
+      "researcherId": "user-karim",
+      "title": {
+        "en": "Everyday shopping in Dhaka",
+        "bn": "ঢাকায় দৈনন্দিন কেনাকাটা"
+      },
+      "description": {
+        "en": "Help local researchers understand everyday experiences. Answers are fictional demo data.",
+        "bn": "দৈনন্দিন অভিজ্ঞতা বুঝতে স্থানীয় গবেষকদের সহায়তা করুন। উত্তরগুলো ডেমোর নমুনা তথ্য।"
+      },
+      "questions": [
+        {
+          "id": "shopping-frequency",
+          "type": "singleChoice",
+          "prompt": {
+            "en": "How often do you shop for household items?",
+            "bn": "আপনি কত ঘন ঘন পরিবারের জিনিসপত্র কেনাকাটা করেন?"
+          },
+          "required": true,
+          "options": [
+            {
+              "id": "weekly",
+              "label": {
+                "en": "Weekly",
+                "bn": "সাপ্তাহিক"
+              }
+            },
+            {
+              "id": "monthly",
+              "label": {
+                "en": "Monthly",
+                "bn": "মাসিক"
+              }
+            },
+            {
+              "id": "rarely",
+              "label": {
+                "en": "Rarely",
+                "bn": "কদাচিৎ"
+              }
+            }
+          ]
+        },
+        {
+          "id": "shopping-channel",
+          "type": "multipleChoice",
+          "prompt": {
+            "en": "Where do you usually shop?",
+            "bn": "আপনি সাধারণত কোথায় কেনাকাটা করেন?"
+          },
+          "required": true,
+          "options": [
+            {
+              "id": "market",
+              "label": {
+                "en": "Local market",
+                "bn": "স্থানীয় বাজার"
+              }
+            },
+            {
+              "id": "superstore",
+              "label": {
+                "en": "Superstore",
+                "bn": "সুপারস্টোর"
+              }
+            },
+            {
+              "id": "online",
+              "label": {
+                "en": "Online",
+                "bn": "অনলাইনে"
+              }
+            }
+          ],
+          "minSelections": 1,
+          "maxSelections": 3
+        },
+        {
+          "id": "shopping-satisfaction",
+          "type": "likert",
+          "prompt": {
+            "en": "How satisfied are you with your usual shopping options?",
+            "bn": "আপনার পরিচিত কেনাকাটার বিকল্পে আপনি কতটা সন্তুষ্ট?"
+          },
+          "required": true,
+          "min": 1,
+          "max": 5,
+          "minLabel": {
+            "en": "Not at all",
+            "bn": "একদম নয়"
+          },
+          "maxLabel": {
+            "en": "Very satisfied",
+            "bn": "খুব সন্তুষ্ট"
+          }
+        },
+        {
+          "id": "shopping-improvement",
+          "type": "text",
+          "prompt": {
+            "en": "What one change would make shopping easier for you?",
+            "bn": "কোন একটি পরিবর্তন কেনাকাটা সহজ করবে?"
+          },
+          "required": true,
+          "minLength": 2,
+          "maxLength": 180
+        },
+        {
+          "id": "shopping-monthly-spend",
+          "type": "number",
+          "prompt": {
+            "en": "About how many taka do you spend each month?",
+            "bn": "প্রতি মাসে আনুমানিক কত টাকা খরচ করেন?"
+          },
+          "required": true,
+          "min": 0,
+          "max": 100000,
+          "step": 100
+        }
+      ],
+      "rewardPaisa": 5000,
+      "feeBps": 100,
+      "quota": 12,
+      "eligibility": {},
+      "manualReview": true,
+      "status": "Active",
+      "createdAt": "2026-10-07T08:00:00.000Z",
+      "updatedAt": "2026-10-12T08:00:00.000Z",
+      "fundedAt": "2026-10-07T08:00:00.000Z",
+      "fundingLedgerEntryId": "fund-survey-shopping-live",
+      "ethicsReview": {
+        "reviewerId": "user-admin",
+        "decision": "approved",
+        "note": "Seeded discoverable sample survey.",
+        "at": "2026-10-08T08:00:00.000Z"
+      },
+      "estimatedMinutes": 3,
+      "topic": "Shopping"
+    },
+    {
+      "id": "survey-commute-live",
+      "researcherId": "user-karim",
+      "title": {
+        "en": "Getting around the city",
+        "bn": "শহরে যাতায়াত"
+      },
+      "description": {
+        "en": "Help local researchers understand everyday experiences. Answers are fictional demo data.",
+        "bn": "দৈনন্দিন অভিজ্ঞতা বুঝতে স্থানীয় গবেষকদের সহায়তা করুন। উত্তরগুলো ডেমোর নমুনা তথ্য।"
+      },
+      "questions": [
+        {
+          "id": "commute-mode",
+          "type": "singleChoice",
+          "prompt": {
+            "en": "What is your most common way to travel to work or study?",
+            "bn": "কাজ বা পড়াশোনায় যাওয়ার সবচেয়ে সাধারণ উপায় কোনটি?"
+          },
+          "required": true,
+          "options": [
+            {
+              "id": "bus",
+              "label": {
+                "en": "Bus",
+                "bn": "বাস"
+              }
+            },
+            {
+              "id": "rickshaw",
+              "label": {
+                "en": "Rickshaw",
+                "bn": "রিকশা"
+              }
+            },
+            {
+              "id": "walk",
+              "label": {
+                "en": "Walk",
+                "bn": "হেঁটে"
+              }
+            },
+            {
+              "id": "other",
+              "label": {
+                "en": "Other",
+                "bn": "অন্যান্য"
+              }
+            }
+          ]
+        },
+        {
+          "id": "commute-time",
+          "type": "number",
+          "prompt": {
+            "en": "How many minutes is your typical one-way trip?",
+            "bn": "আপনার একমুখী যাত্রা সাধারণত কত মিনিট?"
+          },
+          "required": true,
+          "min": 0,
+          "max": 300
+        },
+        {
+          "id": "commute-rating",
+          "type": "likert",
+          "prompt": {
+            "en": "How predictable is your daily travel?",
+            "bn": "আপনার দৈনিক যাতায়াত কতটা অনুমানযোগ্য?"
+          },
+          "required": true,
+          "min": 1,
+          "max": 5
+        }
+      ],
+      "rewardPaisa": 7500,
+      "feeBps": 100,
+      "quota": 8,
+      "eligibility": {},
+      "manualReview": true,
+      "status": "Active",
+      "createdAt": "2026-10-09T08:00:00.000Z",
+      "updatedAt": "2026-10-12T08:00:00.000Z",
+      "fundedAt": "2026-10-09T08:00:00.000Z",
+      "fundingLedgerEntryId": "fund-survey-commute-live",
+      "ethicsReview": {
+        "reviewerId": "user-admin",
+        "decision": "approved",
+        "note": "Seeded discoverable sample survey.",
+        "at": "2026-10-10T08:00:00.000Z"
+      },
+      "estimatedMinutes": 2,
+      "topic": "Mobility"
+    },
+    {
+      "id": "survey-shopping-history",
+      "researcherId": "user-karim",
+      "title": {
+        "en": "Sample: neighborhood shopping choices",
+        "bn": "নমুনা: পাড়ার কেনাকাটার পছন্দ"
+      },
+      "description": {
+        "en": "Help local researchers understand everyday experiences. Answers are fictional demo data.",
+        "bn": "দৈনন্দিন অভিজ্ঞতা বুঝতে স্থানীয় গবেষকদের সহায়তা করুন। উত্তরগুলো ডেমোর নমুনা তথ্য।"
+      },
+      "questions": [
+        {
+          "id": "shopping-frequency",
+          "type": "singleChoice",
+          "prompt": {
+            "en": "How often do you shop for household items?",
+            "bn": "আপনি কত ঘন ঘন পরিবারের জিনিসপত্র কেনাকাটা করেন?"
+          },
+          "required": true,
+          "options": [
+            {
+              "id": "weekly",
+              "label": {
+                "en": "Weekly",
+                "bn": "সাপ্তাহিক"
+              }
+            },
+            {
+              "id": "monthly",
+              "label": {
+                "en": "Monthly",
+                "bn": "মাসিক"
+              }
+            },
+            {
+              "id": "rarely",
+              "label": {
+                "en": "Rarely",
+                "bn": "কদাচিৎ"
+              }
+            }
+          ]
+        },
+        {
+          "id": "shopping-channel",
+          "type": "multipleChoice",
+          "prompt": {
+            "en": "Where do you usually shop?",
+            "bn": "আপনি সাধারণত কোথায় কেনাকাটা করেন?"
+          },
+          "required": true,
+          "options": [
+            {
+              "id": "market",
+              "label": {
+                "en": "Local market",
+                "bn": "স্থানীয় বাজার"
+              }
+            },
+            {
+              "id": "superstore",
+              "label": {
+                "en": "Superstore",
+                "bn": "সুপারস্টোর"
+              }
+            },
+            {
+              "id": "online",
+              "label": {
+                "en": "Online",
+                "bn": "অনলাইনে"
+              }
+            }
+          ],
+          "minSelections": 1,
+          "maxSelections": 3
+        },
+        {
+          "id": "shopping-satisfaction",
+          "type": "likert",
+          "prompt": {
+            "en": "How satisfied are you with your usual shopping options?",
+            "bn": "আপনার পরিচিত কেনাকাটার বিকল্পে আপনি কতটা সন্তুষ্ট?"
+          },
+          "required": true,
+          "min": 1,
+          "max": 5,
+          "minLabel": {
+            "en": "Not at all",
+            "bn": "একদম নয়"
+          },
+          "maxLabel": {
+            "en": "Very satisfied",
+            "bn": "খুব সন্তুষ্ট"
+          }
+        },
+        {
+          "id": "shopping-improvement",
+          "type": "text",
+          "prompt": {
+            "en": "What one change would make shopping easier for you?",
+            "bn": "কোন একটি পরিবর্তন কেনাকাটা সহজ করবে?"
+          },
+          "required": true,
+          "minLength": 2,
+          "maxLength": 180
+        },
+        {
+          "id": "shopping-monthly-spend",
+          "type": "number",
+          "prompt": {
+            "en": "About how many taka do you spend each month?",
+            "bn": "প্রতি মাসে আনুমানিক কত টাকা খরচ করেন?"
+          },
+          "required": true,
+          "min": 0,
+          "max": 100000,
+          "step": 100
+        }
+      ],
+      "rewardPaisa": 10000,
+      "feeBps": 100,
+      "quota": 8,
+      "eligibility": {},
+      "manualReview": true,
+      "status": "Archived",
+      "createdAt": "2026-09-02T08:00:00.000Z",
+      "updatedAt": "2026-10-12T08:00:00.000Z",
+      "fundedAt": "2026-09-02T08:00:00.000Z",
+      "fundingLedgerEntryId": "fund-survey-shopping-history",
+      "ethicsReview": {
+        "reviewerId": "user-admin",
+        "decision": "approved",
+        "note": "Historical sample survey.",
+        "at": "2026-09-03T08:00:00.000Z"
+      },
+      "estimatedMinutes": 2,
+      "topic": "Mobility",
+      "sampleHistory": true
+    }
+  ],
+  "responses": [
+    {
+      "id": "history-response-1",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-1",
+      "answers": {
+        "shopping-frequency": "weekly",
+        "shopping-channel": [
+          "market"
+        ],
+        "shopping-satisfaction": 1,
+        "shopping-improvement": "Closer markets",
+        "shopping-monthly-spend": 5000
+      },
+      "status": "Approved",
+      "verificationStatus": "Passed",
+      "createdAt": "2026-09-06T06:00:00.000Z",
+      "updatedAt": "2026-09-06T06:00:00.000Z",
+      "submittedAt": "2026-09-06T06:00:00.000Z",
+      "timingSeconds": 118,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-06T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-06T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-06T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-06T06:00:00.000Z"
+        }
+      },
+      "flags": [],
+      "reviewDecision": {
+        "reviewerId": "user-karim",
+        "decision": "approved",
+        "note": "Historical sample approval.",
+        "at": "2026-09-06T06:00:00.000Z"
+      },
+      "quotaConsumed": true,
+      "sampleHistory": true
+    },
+    {
+      "id": "history-response-2",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-2",
+      "answers": {
+        "shopping-frequency": "monthly",
+        "shopping-channel": [
+          "market",
+          "online"
+        ],
+        "shopping-satisfaction": 2,
+        "shopping-improvement": "More affordable options",
+        "shopping-monthly-spend": 6250
+      },
+      "status": "Approved",
+      "verificationStatus": "Passed",
+      "createdAt": "2026-09-07T06:00:00.000Z",
+      "updatedAt": "2026-09-07T06:00:00.000Z",
+      "submittedAt": "2026-09-07T06:00:00.000Z",
+      "timingSeconds": 125,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-07T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-07T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-07T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-07T06:00:00.000Z"
+        }
+      },
+      "flags": [],
+      "reviewDecision": {
+        "reviewerId": "user-karim",
+        "decision": "approved",
+        "note": "Historical sample approval.",
+        "at": "2026-09-07T06:00:00.000Z"
+      },
+      "quotaConsumed": true,
+      "sampleHistory": true
+    },
+    {
+      "id": "history-response-3",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-3",
+      "answers": {
+        "shopping-frequency": "rarely",
+        "shopping-channel": [
+          "market"
+        ],
+        "shopping-satisfaction": 3,
+        "shopping-improvement": "Better opening hours",
+        "shopping-monthly-spend": 7500
+      },
+      "status": "Approved",
+      "verificationStatus": "Passed",
+      "createdAt": "2026-09-08T06:00:00.000Z",
+      "updatedAt": "2026-09-08T06:00:00.000Z",
+      "submittedAt": "2026-09-08T06:00:00.000Z",
+      "timingSeconds": 132,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-08T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-08T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-08T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-08T06:00:00.000Z"
+        }
+      },
+      "flags": [],
+      "reviewDecision": {
+        "reviewerId": "user-karim",
+        "decision": "approved",
+        "note": "Historical sample approval.",
+        "at": "2026-09-08T06:00:00.000Z"
+      },
+      "quotaConsumed": true,
+      "sampleHistory": true
+    },
+    {
+      "id": "history-response-4",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-4",
+      "answers": {
+        "shopping-frequency": "weekly",
+        "shopping-channel": [
+          "market",
+          "online"
+        ],
+        "shopping-satisfaction": 4,
+        "shopping-improvement": "Closer markets",
+        "shopping-monthly-spend": 8750
+      },
+      "status": "Approved",
+      "verificationStatus": "Passed",
+      "createdAt": "2026-09-09T06:00:00.000Z",
+      "updatedAt": "2026-09-09T06:00:00.000Z",
+      "submittedAt": "2026-09-09T06:00:00.000Z",
+      "timingSeconds": 139,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-09T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-09T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-09T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-09T06:00:00.000Z"
+        }
+      },
+      "flags": [],
+      "reviewDecision": {
+        "reviewerId": "user-karim",
+        "decision": "approved",
+        "note": "Historical sample approval.",
+        "at": "2026-09-09T06:00:00.000Z"
+      },
+      "quotaConsumed": true,
+      "sampleHistory": true
+    },
+    {
+      "id": "history-response-5",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-5",
+      "answers": {
+        "shopping-frequency": "monthly",
+        "shopping-channel": [
+          "market"
+        ],
+        "shopping-satisfaction": 5,
+        "shopping-improvement": "More affordable options",
+        "shopping-monthly-spend": 10000
+      },
+      "status": "Approved",
+      "verificationStatus": "Passed",
+      "createdAt": "2026-09-10T06:00:00.000Z",
+      "updatedAt": "2026-09-10T06:00:00.000Z",
+      "submittedAt": "2026-09-10T06:00:00.000Z",
+      "timingSeconds": 146,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-10T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-10T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-10T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-10T06:00:00.000Z"
+        }
+      },
+      "flags": [],
+      "reviewDecision": {
+        "reviewerId": "user-karim",
+        "decision": "approved",
+        "note": "Historical sample approval.",
+        "at": "2026-09-10T06:00:00.000Z"
+      },
+      "quotaConsumed": true,
+      "sampleHistory": true
+    },
+    {
+      "id": "history-response-6",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-6",
+      "answers": {
+        "shopping-frequency": "rarely",
+        "shopping-channel": [
+          "market",
+          "online"
+        ],
+        "shopping-satisfaction": 1,
+        "shopping-improvement": "Better opening hours",
+        "shopping-monthly-spend": 11250
+      },
+      "status": "Approved",
+      "verificationStatus": "Passed",
+      "createdAt": "2026-09-11T06:00:00.000Z",
+      "updatedAt": "2026-09-11T06:00:00.000Z",
+      "submittedAt": "2026-09-11T06:00:00.000Z",
+      "timingSeconds": 153,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-11T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-11T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-11T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-11T06:00:00.000Z"
+        }
+      },
+      "flags": [],
+      "reviewDecision": {
+        "reviewerId": "user-karim",
+        "decision": "approved",
+        "note": "Historical sample approval.",
+        "at": "2026-09-11T06:00:00.000Z"
+      },
+      "quotaConsumed": true,
+      "sampleHistory": true
+    },
+    {
+      "id": "history-response-7",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-7",
+      "answers": {
+        "shopping-frequency": "weekly",
+        "shopping-channel": [
+          "market"
+        ],
+        "shopping-satisfaction": 2,
+        "shopping-improvement": "Closer markets",
+        "shopping-monthly-spend": 12500
+      },
+      "status": "Approved",
+      "verificationStatus": "Passed",
+      "createdAt": "2026-09-12T06:00:00.000Z",
+      "updatedAt": "2026-09-12T06:00:00.000Z",
+      "submittedAt": "2026-09-12T06:00:00.000Z",
+      "timingSeconds": 160,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-12T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-12T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-12T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-12T06:00:00.000Z"
+        }
+      },
+      "flags": [],
+      "reviewDecision": {
+        "reviewerId": "user-karim",
+        "decision": "approved",
+        "note": "Historical sample approval.",
+        "at": "2026-09-12T06:00:00.000Z"
+      },
+      "quotaConsumed": true,
+      "sampleHistory": true
+    },
+    {
+      "id": "history-response-8",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-8",
+      "answers": {
+        "shopping-frequency": "monthly",
+        "shopping-channel": [
+          "market",
+          "online"
+        ],
+        "shopping-satisfaction": 3,
+        "shopping-improvement": "More affordable options",
+        "shopping-monthly-spend": 13750
+      },
+      "status": "Approved",
+      "verificationStatus": "Passed",
+      "createdAt": "2026-09-13T06:00:00.000Z",
+      "updatedAt": "2026-09-13T06:00:00.000Z",
+      "submittedAt": "2026-09-13T06:00:00.000Z",
+      "timingSeconds": 167,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-13T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-13T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-13T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-13T06:00:00.000Z"
+        }
+      },
+      "flags": [],
+      "reviewDecision": {
+        "reviewerId": "user-karim",
+        "decision": "approved",
+        "note": "Historical sample approval.",
+        "at": "2026-09-13T06:00:00.000Z"
+      },
+      "quotaConsumed": true,
+      "sampleHistory": true
+    }
+  ],
+  "verificationRuns": [
+    {
+      "id": "history-verification-1",
+      "responseId": "history-response-1",
+      "scenario": "clean",
+      "status": "Completed",
+      "startedAt": "2026-09-06T06:00:00.000Z",
+      "completedAt": "2026-09-06T06:00:00.000Z",
+      "phrase": {
+        "en": "I choose where my opinion goes.",
+        "bn": "আমার মতামত কোথায় যাবে তা আমি বেছে নিই।"
+      },
+      "clipRef": "sample://historical-clip",
+      "clipDurationMs": 2200,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-06T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-06T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-06T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-06T06:00:00.000Z"
+        }
+      },
+      "flags": []
+    },
+    {
+      "id": "history-verification-2",
+      "responseId": "history-response-2",
+      "scenario": "clean",
+      "status": "Completed",
+      "startedAt": "2026-09-07T06:00:00.000Z",
+      "completedAt": "2026-09-07T06:00:00.000Z",
+      "phrase": {
+        "en": "I choose where my opinion goes.",
+        "bn": "আমার মতামত কোথায় যাবে তা আমি বেছে নিই।"
+      },
+      "clipRef": "sample://historical-clip",
+      "clipDurationMs": 2200,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-07T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-07T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-07T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-07T06:00:00.000Z"
+        }
+      },
+      "flags": []
+    },
+    {
+      "id": "history-verification-3",
+      "responseId": "history-response-3",
+      "scenario": "clean",
+      "status": "Completed",
+      "startedAt": "2026-09-08T06:00:00.000Z",
+      "completedAt": "2026-09-08T06:00:00.000Z",
+      "phrase": {
+        "en": "I choose where my opinion goes.",
+        "bn": "আমার মতামত কোথায় যাবে তা আমি বেছে নিই।"
+      },
+      "clipRef": "sample://historical-clip",
+      "clipDurationMs": 2200,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-08T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-08T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-08T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-08T06:00:00.000Z"
+        }
+      },
+      "flags": []
+    },
+    {
+      "id": "history-verification-4",
+      "responseId": "history-response-4",
+      "scenario": "clean",
+      "status": "Completed",
+      "startedAt": "2026-09-09T06:00:00.000Z",
+      "completedAt": "2026-09-09T06:00:00.000Z",
+      "phrase": {
+        "en": "I choose where my opinion goes.",
+        "bn": "আমার মতামত কোথায় যাবে তা আমি বেছে নিই।"
+      },
+      "clipRef": "sample://historical-clip",
+      "clipDurationMs": 2200,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-09T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-09T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-09T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-09T06:00:00.000Z"
+        }
+      },
+      "flags": []
+    },
+    {
+      "id": "history-verification-5",
+      "responseId": "history-response-5",
+      "scenario": "clean",
+      "status": "Completed",
+      "startedAt": "2026-09-10T06:00:00.000Z",
+      "completedAt": "2026-09-10T06:00:00.000Z",
+      "phrase": {
+        "en": "I choose where my opinion goes.",
+        "bn": "আমার মতামত কোথায় যাবে তা আমি বেছে নিই।"
+      },
+      "clipRef": "sample://historical-clip",
+      "clipDurationMs": 2200,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-10T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-10T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-10T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-10T06:00:00.000Z"
+        }
+      },
+      "flags": []
+    },
+    {
+      "id": "history-verification-6",
+      "responseId": "history-response-6",
+      "scenario": "clean",
+      "status": "Completed",
+      "startedAt": "2026-09-11T06:00:00.000Z",
+      "completedAt": "2026-09-11T06:00:00.000Z",
+      "phrase": {
+        "en": "I choose where my opinion goes.",
+        "bn": "আমার মতামত কোথায় যাবে তা আমি বেছে নিই।"
+      },
+      "clipRef": "sample://historical-clip",
+      "clipDurationMs": 2200,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-11T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-11T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-11T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-11T06:00:00.000Z"
+        }
+      },
+      "flags": []
+    },
+    {
+      "id": "history-verification-7",
+      "responseId": "history-response-7",
+      "scenario": "clean",
+      "status": "Completed",
+      "startedAt": "2026-09-12T06:00:00.000Z",
+      "completedAt": "2026-09-12T06:00:00.000Z",
+      "phrase": {
+        "en": "I choose where my opinion goes.",
+        "bn": "আমার মতামত কোথায় যাবে তা আমি বেছে নিই।"
+      },
+      "clipRef": "sample://historical-clip",
+      "clipDurationMs": 2200,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-12T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-12T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-12T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-12T06:00:00.000Z"
+        }
+      },
+      "flags": []
+    },
+    {
+      "id": "history-verification-8",
+      "responseId": "history-response-8",
+      "scenario": "clean",
+      "status": "Completed",
+      "startedAt": "2026-09-13T06:00:00.000Z",
+      "completedAt": "2026-09-13T06:00:00.000Z",
+      "phrase": {
+        "en": "I choose where my opinion goes.",
+        "bn": "আমার মতামত কোথায় যাবে তা আমি বেছে নিই।"
+      },
+      "clipRef": "sample://historical-clip",
+      "clipDurationMs": 2200,
+      "checks": {
+        "device": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-13T06:00:00.000Z"
+        },
+        "timing": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-13T06:00:00.000Z"
+        },
+        "attention": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-13T06:00:00.000Z"
+        },
+        "voice": {
+          "passed": true,
+          "detail": "Historical sample check passed.",
+          "checkedAt": "2026-09-13T06:00:00.000Z"
+        }
+      },
+      "flags": []
+    }
+  ],
+  "payments": [
+    {
+      "id": "history-payment-1",
+      "responseId": "history-response-1",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-1",
+      "rewardPaisa": 10000,
+      "feePaisa": 100,
+      "status": "Paid",
+      "attempts": 1,
+      "idempotencyKey": "demo:history-response-1",
+      "scenario": "success",
+      "scheduledAt": "2026-09-06T06:00:00.000Z",
+      "transactionRef": "DEMO-HISTORY-001",
+      "completedAt": "2026-09-06T06:00:00.000Z",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-payment-2",
+      "responseId": "history-response-2",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-2",
+      "rewardPaisa": 10000,
+      "feePaisa": 100,
+      "status": "Paid",
+      "attempts": 1,
+      "idempotencyKey": "demo:history-response-2",
+      "scenario": "success",
+      "scheduledAt": "2026-09-07T06:00:00.000Z",
+      "transactionRef": "DEMO-HISTORY-002",
+      "completedAt": "2026-09-07T06:00:00.000Z",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-payment-3",
+      "responseId": "history-response-3",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-3",
+      "rewardPaisa": 10000,
+      "feePaisa": 100,
+      "status": "Paid",
+      "attempts": 1,
+      "idempotencyKey": "demo:history-response-3",
+      "scenario": "success",
+      "scheduledAt": "2026-09-08T06:00:00.000Z",
+      "transactionRef": "DEMO-HISTORY-003",
+      "completedAt": "2026-09-08T06:00:00.000Z",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-payment-4",
+      "responseId": "history-response-4",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-4",
+      "rewardPaisa": 10000,
+      "feePaisa": 100,
+      "status": "Paid",
+      "attempts": 1,
+      "idempotencyKey": "demo:history-response-4",
+      "scenario": "success",
+      "scheduledAt": "2026-09-09T06:00:00.000Z",
+      "transactionRef": "DEMO-HISTORY-004",
+      "completedAt": "2026-09-09T06:00:00.000Z",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-payment-5",
+      "responseId": "history-response-5",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-5",
+      "rewardPaisa": 10000,
+      "feePaisa": 100,
+      "status": "Paid",
+      "attempts": 1,
+      "idempotencyKey": "demo:history-response-5",
+      "scenario": "success",
+      "scheduledAt": "2026-09-10T06:00:00.000Z",
+      "transactionRef": "DEMO-HISTORY-005",
+      "completedAt": "2026-09-10T06:00:00.000Z",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-payment-6",
+      "responseId": "history-response-6",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-6",
+      "rewardPaisa": 10000,
+      "feePaisa": 100,
+      "status": "Paid",
+      "attempts": 1,
+      "idempotencyKey": "demo:history-response-6",
+      "scenario": "success",
+      "scheduledAt": "2026-09-11T06:00:00.000Z",
+      "transactionRef": "DEMO-HISTORY-006",
+      "completedAt": "2026-09-11T06:00:00.000Z",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-payment-7",
+      "responseId": "history-response-7",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-7",
+      "rewardPaisa": 10000,
+      "feePaisa": 100,
+      "status": "Paid",
+      "attempts": 1,
+      "idempotencyKey": "demo:history-response-7",
+      "scenario": "success",
+      "scheduledAt": "2026-09-12T06:00:00.000Z",
+      "transactionRef": "DEMO-HISTORY-007",
+      "completedAt": "2026-09-12T06:00:00.000Z",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-payment-8",
+      "responseId": "history-response-8",
+      "surveyId": "survey-shopping-history",
+      "respondentId": "sample-respondent-8",
+      "rewardPaisa": 10000,
+      "feePaisa": 100,
+      "status": "Paid",
+      "attempts": 1,
+      "idempotencyKey": "demo:history-response-8",
+      "scenario": "success",
+      "scheduledAt": "2026-09-13T06:00:00.000Z",
+      "transactionRef": "DEMO-HISTORY-008",
+      "completedAt": "2026-09-13T06:00:00.000Z",
+      "sampleHistory": true
+    }
+  ],
+  "ledgerEntries": [
+    {
+      "id": "seed-karim-balance",
+      "fromAccount": "seed:treasury",
+      "toAccount": "researcher:user-karim:available",
+      "amountPaisa": 1000000,
+      "createdAt": "2026-09-12T08:00:00.000Z",
+      "memo": "Opening mock researcher balance"
+    },
+    {
+      "id": "fund-survey-shopping-live",
+      "fromAccount": "seed:treasury",
+      "toAccount": "survey:survey-shopping-live:escrow",
+      "amountPaisa": 60600,
+      "surveyId": "survey-shopping-live",
+      "createdAt": "2026-10-07T08:00:00.000Z",
+      "memo": "Seeded discovery survey escrow"
+    },
+    {
+      "id": "fund-survey-commute-live",
+      "fromAccount": "seed:treasury",
+      "toAccount": "survey:survey-commute-live:escrow",
+      "amountPaisa": 60600,
+      "surveyId": "survey-commute-live",
+      "createdAt": "2026-10-09T08:00:00.000Z",
+      "memo": "Seeded discovery survey escrow"
+    },
+    {
+      "id": "fund-survey-shopping-history",
+      "fromAccount": "seed:treasury",
+      "toAccount": "survey:survey-shopping-history:escrow",
+      "amountPaisa": 80800,
+      "surveyId": "survey-shopping-history",
+      "createdAt": "2026-09-02T08:00:00.000Z",
+      "memo": "Historical sample escrow",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-reward-1",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "respondent:sample-respondent-1:wallet",
+      "amountPaisa": 10000,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-1",
+      "createdAt": "2026-09-06T06:00:00.000Z",
+      "memo": "Historical respondent reward",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-fee-1",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "platform:fees",
+      "amountPaisa": 100,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-1",
+      "createdAt": "2026-09-06T06:00:00.000Z",
+      "memo": "Historical platform fee",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-reward-2",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "respondent:sample-respondent-2:wallet",
+      "amountPaisa": 10000,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-2",
+      "createdAt": "2026-09-07T06:00:00.000Z",
+      "memo": "Historical respondent reward",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-fee-2",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "platform:fees",
+      "amountPaisa": 100,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-2",
+      "createdAt": "2026-09-07T06:00:00.000Z",
+      "memo": "Historical platform fee",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-reward-3",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "respondent:sample-respondent-3:wallet",
+      "amountPaisa": 10000,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-3",
+      "createdAt": "2026-09-08T06:00:00.000Z",
+      "memo": "Historical respondent reward",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-fee-3",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "platform:fees",
+      "amountPaisa": 100,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-3",
+      "createdAt": "2026-09-08T06:00:00.000Z",
+      "memo": "Historical platform fee",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-reward-4",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "respondent:sample-respondent-4:wallet",
+      "amountPaisa": 10000,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-4",
+      "createdAt": "2026-09-09T06:00:00.000Z",
+      "memo": "Historical respondent reward",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-fee-4",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "platform:fees",
+      "amountPaisa": 100,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-4",
+      "createdAt": "2026-09-09T06:00:00.000Z",
+      "memo": "Historical platform fee",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-reward-5",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "respondent:sample-respondent-5:wallet",
+      "amountPaisa": 10000,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-5",
+      "createdAt": "2026-09-10T06:00:00.000Z",
+      "memo": "Historical respondent reward",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-fee-5",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "platform:fees",
+      "amountPaisa": 100,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-5",
+      "createdAt": "2026-09-10T06:00:00.000Z",
+      "memo": "Historical platform fee",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-reward-6",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "respondent:sample-respondent-6:wallet",
+      "amountPaisa": 10000,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-6",
+      "createdAt": "2026-09-11T06:00:00.000Z",
+      "memo": "Historical respondent reward",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-fee-6",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "platform:fees",
+      "amountPaisa": 100,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-6",
+      "createdAt": "2026-09-11T06:00:00.000Z",
+      "memo": "Historical platform fee",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-reward-7",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "respondent:sample-respondent-7:wallet",
+      "amountPaisa": 10000,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-7",
+      "createdAt": "2026-09-12T06:00:00.000Z",
+      "memo": "Historical respondent reward",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-fee-7",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "platform:fees",
+      "amountPaisa": 100,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-7",
+      "createdAt": "2026-09-12T06:00:00.000Z",
+      "memo": "Historical platform fee",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-reward-8",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "respondent:sample-respondent-8:wallet",
+      "amountPaisa": 10000,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-8",
+      "createdAt": "2026-09-13T06:00:00.000Z",
+      "memo": "Historical respondent reward",
+      "sampleHistory": true
+    },
+    {
+      "id": "history-fee-8",
+      "fromAccount": "survey:survey-shopping-history:escrow",
+      "toAccount": "platform:fees",
+      "amountPaisa": 100,
+      "surveyId": "survey-shopping-history",
+      "paymentId": "history-payment-8",
+      "createdAt": "2026-09-13T06:00:00.000Z",
+      "memo": "Historical platform fee",
+      "sampleHistory": true
+    }
+  ],
+  "notifications": [],
+  "activityEvents": [
+    {
+      "id": "history-event-1",
+      "actorId": "user-karim",
+      "action": "historical_payment_paid",
+      "surveyId": "survey-shopping-history",
+      "responseId": "history-response-1",
+      "paymentId": "history-payment-1",
+      "createdAt": "2026-09-06T06:00:00.000Z",
+      "detail": "Sample historical response and payment."
+    },
+    {
+      "id": "history-event-2",
+      "actorId": "user-karim",
+      "action": "historical_payment_paid",
+      "surveyId": "survey-shopping-history",
+      "responseId": "history-response-2",
+      "paymentId": "history-payment-2",
+      "createdAt": "2026-09-07T06:00:00.000Z",
+      "detail": "Sample historical response and payment."
+    },
+    {
+      "id": "history-event-3",
+      "actorId": "user-karim",
+      "action": "historical_payment_paid",
+      "surveyId": "survey-shopping-history",
+      "responseId": "history-response-3",
+      "paymentId": "history-payment-3",
+      "createdAt": "2026-09-08T06:00:00.000Z",
+      "detail": "Sample historical response and payment."
+    },
+    {
+      "id": "history-event-4",
+      "actorId": "user-karim",
+      "action": "historical_payment_paid",
+      "surveyId": "survey-shopping-history",
+      "responseId": "history-response-4",
+      "paymentId": "history-payment-4",
+      "createdAt": "2026-09-09T06:00:00.000Z",
+      "detail": "Sample historical response and payment."
+    },
+    {
+      "id": "history-event-5",
+      "actorId": "user-karim",
+      "action": "historical_payment_paid",
+      "surveyId": "survey-shopping-history",
+      "responseId": "history-response-5",
+      "paymentId": "history-payment-5",
+      "createdAt": "2026-09-10T06:00:00.000Z",
+      "detail": "Sample historical response and payment."
+    },
+    {
+      "id": "history-event-6",
+      "actorId": "user-karim",
+      "action": "historical_payment_paid",
+      "surveyId": "survey-shopping-history",
+      "responseId": "history-response-6",
+      "paymentId": "history-payment-6",
+      "createdAt": "2026-09-11T06:00:00.000Z",
+      "detail": "Sample historical response and payment."
+    },
+    {
+      "id": "history-event-7",
+      "actorId": "user-karim",
+      "action": "historical_payment_paid",
+      "surveyId": "survey-shopping-history",
+      "responseId": "history-response-7",
+      "paymentId": "history-payment-7",
+      "createdAt": "2026-09-12T06:00:00.000Z",
+      "detail": "Sample historical response and payment."
+    },
+    {
+      "id": "history-event-8",
+      "actorId": "user-karim",
+      "action": "historical_payment_paid",
+      "surveyId": "survey-shopping-history",
+      "responseId": "history-response-8",
+      "paymentId": "history-payment-8",
+      "createdAt": "2026-09-13T06:00:00.000Z",
+      "detail": "Sample historical response and payment."
+    }
+  ],
+  "demoSettings": {
+    "responseScenario": "clean",
+    "paymentScenario": "success",
+    "feeBps": 100,
+    "templates": [
+      {
+        "id": "shopping-habits",
+        "name": {
+          "en": "Shopping habits",
+          "bn": "কেনাকাটার অভ্যাস"
+        },
+        "title": {
+          "en": "Everyday shopping habits in Dhaka",
+          "bn": "ঢাকায় দৈনন্দিন কেনাকাটার অভ্যাস"
+        },
+        "description": {
+          "en": "A short study of how Dhaka households choose where and how to shop.",
+          "bn": "ঢাকার পরিবারগুলো কোথায় ও কীভাবে কেনাকাটা বেছে নেয় তার একটি সংক্ষিপ্ত জরিপ।"
+        },
+        "questions": [
+          {
+            "id": "shopping-frequency",
+            "type": "singleChoice",
+            "prompt": {
+              "en": "How often do you shop for household items?",
+              "bn": "আপনি কত ঘন ঘন পরিবারের জিনিসপত্র কেনাকাটা করেন?"
+            },
+            "required": true,
+            "options": [
+              {
+                "id": "weekly",
+                "label": {
+                  "en": "Weekly",
+                  "bn": "সাপ্তাহিক"
+                }
+              },
+              {
+                "id": "monthly",
+                "label": {
+                  "en": "Monthly",
+                  "bn": "মাসিক"
+                }
+              },
+              {
+                "id": "rarely",
+                "label": {
+                  "en": "Rarely",
+                  "bn": "কদাচিৎ"
+                }
+              }
+            ]
+          },
+          {
+            "id": "shopping-channel",
+            "type": "multipleChoice",
+            "prompt": {
+              "en": "Where do you usually shop?",
+              "bn": "আপনি সাধারণত কোথায় কেনাকাটা করেন?"
+            },
+            "required": true,
+            "options": [
+              {
+                "id": "market",
+                "label": {
+                  "en": "Local market",
+                  "bn": "স্থানীয় বাজার"
+                }
+              },
+              {
+                "id": "superstore",
+                "label": {
+                  "en": "Superstore",
+                  "bn": "সুপারস্টোর"
+                }
+              },
+              {
+                "id": "online",
+                "label": {
+                  "en": "Online",
+                  "bn": "অনলাইনে"
+                }
+              }
+            ],
+            "minSelections": 1,
+            "maxSelections": 3
+          },
+          {
+            "id": "shopping-satisfaction",
+            "type": "likert",
+            "prompt": {
+              "en": "How satisfied are you with your usual shopping options?",
+              "bn": "আপনার পরিচিত কেনাকাটার বিকল্পে আপনি কতটা সন্তুষ্ট?"
+            },
+            "required": true,
+            "min": 1,
+            "max": 5,
+            "minLabel": {
+              "en": "Not at all",
+              "bn": "একদম নয়"
+            },
+            "maxLabel": {
+              "en": "Very satisfied",
+              "bn": "খুব সন্তুষ্ট"
+            }
+          },
+          {
+            "id": "shopping-improvement",
+            "type": "text",
+            "prompt": {
+              "en": "What one change would make shopping easier for you?",
+              "bn": "কোন একটি পরিবর্তন কেনাকাটা সহজ করবে?"
+            },
+            "required": true,
+            "minLength": 2,
+            "maxLength": 180
+          },
+          {
+            "id": "shopping-monthly-spend",
+            "type": "number",
+            "prompt": {
+              "en": "About how many taka do you spend each month?",
+              "bn": "প্রতি মাসে আনুমানিক কত টাকা খরচ করেন?"
+            },
+            "required": true,
+            "min": 0,
+            "max": 100000,
+            "step": 100
+          }
+        ],
+        "estimatedMinutes": 3,
+        "topic": "Shopping"
+      }
+    ]
+  }
+}

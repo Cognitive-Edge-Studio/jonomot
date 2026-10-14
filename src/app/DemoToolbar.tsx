@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, Languages, RotateCcw, SlidersHorizontal, UserRound, X } from 'lucide-react';
 import type { DemoScenario, PaymentScenario } from '../../shared/contracts';
 import { useDemoCommand, useDemoSession, useDemoState } from '../shared/state';
+import { browserDemoEnabled } from '../shared/api/mode';
 import { Button, Modal } from '../shared/ui';
 import { Brand } from './Brand';
 import { routeForUser } from './navigation';
@@ -60,7 +61,7 @@ export function DemoToolbar() {
 
   return <>
     <header className="demo-toolbar">
-      <div className="demo-toolbar__identity"><Brand /><span className="demo-toolbar__disclosure"><i />Demo · simulated checks & payments</span></div>
+      <div className="demo-toolbar__identity"><Brand /><span className="demo-toolbar__disclosure"><i />{browserDemoEnabled ? (language === 'bn' ? 'ব্রাউজার ডেমো · তথ্য এই ব্রাউজারে থাকে' : 'Browser demo · changes stay in this browser') : 'Demo · simulated checks & payments'}</span></div>
       <div className="demo-toolbar__controls">
         <div className="demo-language" role="group" aria-label="Language"><Languages size={15} aria-hidden="true" /><button type="button" aria-pressed={language === 'en'} onClick={() => chooseLanguage('en')}>EN</button><span>/</span><button type="button" aria-pressed={language === 'bn'} onClick={() => chooseLanguage('bn')}>বাংলা</button></div>
         <label className="demo-persona"><UserRound size={15} aria-hidden="true" /><select aria-label="Demo persona" value={userId ?? ''} onChange={(event) => switchPersona(event.target.value)}><option value="">Choose a persona</option>{people.map((person) => <option key={person.id} value={person.id}>{person.name} · {person.role}</option>)}</select></label>
