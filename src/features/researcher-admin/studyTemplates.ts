@@ -1,0 +1,45 @@
+import type { BilingualText, SurveyDefinition, SurveyQuestion } from '../../../shared/contracts.js';
+
+const text = (en: string, bn: string): BilingualText => ({ en, bn });
+const choices = (id: string, values: [string, string][]) => values.map(([en, bn], index) => ({ id: id + '-' + index, label: text(en, bn) }));
+const single = (id: string, en: string, bn: string, values: [string, string][]): SurveyQuestion => ({ id, type: 'singleChoice', prompt: text(en, bn), required: true, options: choices(id, values) });
+const multiple = (id: string, en: string, bn: string, values: [string, string][]): SurveyQuestion => ({ id, type: 'multipleChoice', prompt: text(en, bn), required: false, minSelections: 0, maxSelections: 2, options: choices(id, values) });
+const scale = (id: string, en: string, bn: string, low: [string, string], high: [string, string]): SurveyQuestion => ({ id, type: 'likert', prompt: text(en, bn), required: false, min: 1, max: 5, minLabel: text(...low), maxLabel: text(...high) });
+const written = (id: string, en: string, bn: string): SurveyQuestion => ({ id, type: 'text', prompt: text(en, bn), required: false, maxLength: 500 });
+const number = (id: string, en: string, bn: string, max: number): SurveyQuestion => ({ id, type: 'number', prompt: text(en, bn), required: false, min: 0, max, step: 1 });
+
+export interface StudyTemplate { id: string; name: BilingualText; goal: BilingualText; definition: SurveyDefinition }
+function template(id: string, name: BilingualText, goal: BilingualText, title: BilingualText, topic: string, questions: SurveyQuestion[]): StudyTemplate {
+  return { id, name, goal, definition: { title, description: goal, topic, questions, estimatedMinutes: 4, rewardPaisa: 10000, quota: 20, manualReview: true, eligibility: {} } };
+}
+
+export const studyTemplates: StudyTemplate[] = [
+  template('shopping', text('Shopping & household choices', 'কেনাকাটা ও পরিবারের পছন্দ'), text('Compare how often people shop, where they buy essentials, and what shapes their experience. Spending and written feedback are optional.', 'মানুষ কতবার কেনাকাটা করেন, কোথা থেকে প্রয়োজনীয় জিনিস কেনেন এবং অভিজ্ঞতা কেমন হয় তা বুঝুন। খরচ ও লিখিত মতামত দেওয়া ঐচ্ছিক।'), text('How households choose where to shop', 'পরিবারগুলো কেনাকাটার জায়গা যেভাবে বেছে নেয়'), 'Shopping', [
+    single('shopping-frequency', 'In the past 30 days, how often did you buy household essentials?', 'গত ৩০ দিনে পরিবারের প্রয়োজনীয় জিনিস কতবার কিনেছেন?', [['Once or twice', 'একবার বা দুবার'], ['About once a week', 'প্রায় সপ্তাহে একবার'], ['Several times a week', 'সপ্তাহে কয়েকবার'], ['Not in the past 30 days', 'গত ৩০ দিনে কিনিনি']]),
+    multiple('shopping-places', 'Where did you buy household essentials in the past 30 days? Select up to two.', 'গত ৩০ দিনে কোথা থেকে পরিবারের প্রয়োজনীয় জিনিস কিনেছেন? সর্বোচ্চ দুটি বেছে নিন।', [['Local market', 'স্থানীয় বাজার'], ['Superstore', 'সুপারশপ'], ['Neighborhood shop', 'পাড়ার দোকান'], ['Online', 'অনলাইন'], ['Other', 'অন্যান্য']]),
+    scale('shopping-satisfaction', 'Thinking about your most recent purchase, how satisfied were you with the experience?', 'সর্বশেষ কেনাকাটার অভিজ্ঞতা নিয়ে আপনি কতটা সন্তুষ্ট?', ['Very dissatisfied', 'খুব অসন্তুষ্ট'], ['Very satisfied', 'খুব সন্তুষ্ট']),
+    written('shopping-improvement', 'What, if anything, would you change about that shopping experience?', 'সেই কেনাকাটার অভিজ্ঞতার কোনো দিক বদলাতে চাইলে কী বদলাতেন?'),
+    number('shopping-spend', 'About how much did you spend on household essentials in the past 30 days? (BDT, optional)', 'গত ৩০ দিনে পরিবারের প্রয়োজনীয় জিনিসে আনুমানিক কত টাকা খরচ করেছেন? (ঐচ্ছিক)', 1000000),
+  ]),
+  template('mobility', text('Everyday journeys', 'প্রতিদিনের যাতায়াত'), text('Understand recent travel choices, journey time, and the factors people consider. Use the findings to compare practical transport needs.', 'সাম্প্রতিক যাতায়াতের ধরন, সময় এবং সিদ্ধান্তের কারণগুলো বুঝুন। ফলাফল থেকে মানুষের বাস্তব যাতায়াতের চাহিদা তুলনা করুন।'), text('How people navigate their everyday journeys', 'মানুষের প্রতিদিনের যাতায়াতের অভিজ্ঞতা'), 'Mobility', [
+    single('mobility-mode', 'In the past 7 days, which option did you use most often for local trips?', 'গত ৭ দিনে কাছাকাছি যাতায়াতে কোন মাধ্যমটি সবচেয়ে বেশি ব্যবহার করেছেন?', [['Walking', 'হাঁটা'], ['Bicycle', 'সাইকেল'], ['Bus', 'বাস'], ['Rickshaw', 'রিকশা'], ['CNG or car', 'সিএনজি বা গাড়ি'], ['Other', 'অন্যান্য'], ['I did not make a local trip', 'কাছাকাছি কোথাও যাইনি']]),
+    multiple('mobility-factors', 'Which factors influenced your travel choices, if any? Select up to two.', 'যাতায়াতের মাধ্যম বেছে নেওয়ায় কোন বিষয়গুলো প্রভাব ফেলেছে? সর্বোচ্চ দুটি বেছে নিন।', [['Cost', 'খরচ'], ['Travel time', 'যাতায়াতের সময়'], ['Availability', 'সহজলভ্যতা'], ['Comfort', 'স্বাচ্ছন্দ্য'], ['Safety', 'নিরাপত্তা']]),
+    scale('mobility-satisfaction', 'How satisfied were you with your most recent local trip?', 'সর্বশেষ কাছাকাছি যাতায়াতের অভিজ্ঞতা নিয়ে কতটা সন্তুষ্ট?', ['Very dissatisfied', 'খুব অসন্তুষ্ট'], ['Very satisfied', 'খুব সন্তুষ্ট']),
+    number('mobility-duration', 'About how many minutes did your most recent local trip take? (Optional)', 'সর্বশেষ কাছাকাছি যাতায়াতে আনুমানিক কত মিনিট লেগেছিল? (ঐচ্ছিক)', 1440),
+    written('mobility-change', 'What, if anything, would make that journey easier for you?', 'সেই যাতায়াত আরও সহজ করতে কোনো পরিবর্তন চাইলে কী চাইতেন?'),
+  ]),
+  template('digital', text('Access to digital services', 'ডিজিটাল সেবার সুযোগ'), text('Explore how people use digital services, where they encounter difficulty, and which support channels they prefer.', 'মানুষ কীভাবে ডিজিটাল সেবা ব্যবহার করেন, কোথায় অসুবিধা হয় এবং কোন মাধ্যমে সহায়তা চান তা বুঝুন।'), text('Making everyday digital services easier to use', 'প্রতিদিনের ডিজিটাল সেবা ব্যবহারের অভিজ্ঞতা'), 'Digital access', [
+    single('digital-frequency', 'In the past 30 days, how often did you use an app or website for an everyday service?', 'গত ৩০ দিনে দৈনন্দিন কোনো সেবার জন্য অ্যাপ বা ওয়েবসাইট কতবার ব্যবহার করেছেন?', [['Every day', 'প্রতিদিন'], ['Several days a week', 'সপ্তাহে কয়েকদিন'], ['Less than once a week', 'সপ্তাহে একবারের কম'], ['Not in the past 30 days', 'গত ৩০ দিনে ব্যবহার করিনি']]),
+    multiple('digital-barriers', 'Which aspects were difficult, if any? Select up to two.', 'কোন দিকগুলোতে অসুবিধা হয়েছে? সর্বোচ্চ দুটি বেছে নিন।', [['Mobile data cost', 'মোবাইল ডেটার খরচ'], ['Connection reliability', 'ইন্টারনেট সংযোগ'], ['Understanding the app', 'অ্যাপ বুঝতে পারা'], ['Account setup', 'অ্যাকাউন্ট তৈরি'], ['Finding help', 'সহায়তা পাওয়া']]),
+    scale('digital-confidence', 'How confident do you feel finding help when a digital service does not work as expected?', 'ডিজিটাল সেবা ঠিকমতো কাজ না করলে সহায়তা খুঁজে পেতে কতটা আত্মবিশ্বাসী?', ['Not confident', 'আত্মবিশ্বাসী নই'], ['Very confident', 'খুব আত্মবিশ্বাসী']),
+    single('digital-support', 'Which way of getting help would you prefer?', 'কোন মাধ্যমে সহায়তা পেতে পছন্দ করবেন?', [['Help inside the app', 'অ্যাপের ভেতরে সহায়তা'], ['Phone support', 'ফোনে সহায়তা'], ['In-person support', 'সরাসরি সহায়তা'], ['Friends or family', 'বন্ধু বা পরিবার'], ['No preference', 'নির্দিষ্ট পছন্দ নেই']]),
+    written('digital-change', 'What, if anything, would make these services easier for you to use?', 'এই সেবাগুলো ব্যবহার আরও সহজ করতে কোনো পরিবর্তন চাইলে কী চাইতেন?'),
+  ]),
+  template('budget', text('Household budgeting', 'পরিবারের খরচের পরিকল্পনা'), text('Understand how households plan essential spending and which categories need the most attention. Amounts and written answers are optional.', 'পরিবারগুলো প্রয়োজনীয় খরচের পরিকল্পনা কীভাবে করেন এবং কোন খাতে বেশি নজর দরকার তা বুঝুন। খরচের পরিমাণ ও লিখিত উত্তর দেওয়া ঐচ্ছিক।'), text('How households plan their everyday expenses', 'পরিবারের দৈনন্দিন খরচের পরিকল্পনা'), 'Household budget', [
+    single('budget-planning', 'How do you usually plan spending on household essentials?', 'পরিবারের প্রয়োজনীয় খরচের পরিকল্পনা সাধারণত কীভাবে করেন?', [['Weekly plan', 'সাপ্তাহিক পরিকল্পনা'], ['Monthly plan', 'মাসিক পরিকল্পনা'], ['As needs arise', 'প্রয়োজন অনুযায়ী'], ['No formal plan', 'নির্দিষ্ট পরিকল্পনা করি না']]),
+    multiple('budget-categories', 'In the past 30 days, which categories needed the most planning? Select up to two.', 'গত ৩০ দিনে কোন খাতগুলোর খরচে বেশি পরিকল্পনা দরকার হয়েছে? সর্বোচ্চ দুটি বেছে নিন।', [['Food', 'খাবার'], ['Housing', 'বাসস্থান'], ['Transport', 'যাতায়াত'], ['Utilities', 'বিদ্যুৎ, পানি ও গ্যাস'], ['Education or health', 'শিক্ষা বা স্বাস্থ্য'], ['Other', 'অন্যান্য']]),
+    scale('budget-ease', 'How easy or difficult was it to follow your spending plan in the past 30 days?', 'গত ৩০ দিনে খরচের পরিকল্পনা অনুসরণ করা কতটা সহজ বা কঠিন ছিল?', ['Very difficult', 'খুব কঠিন'], ['Very easy', 'খুব সহজ']),
+    number('budget-amount', 'About how much did your household spend on essentials in the past 30 days? (BDT, optional)', 'গত ৩০ দিনে পরিবারের প্রয়োজনীয় খরচ আনুমানিক কত টাকা ছিল? (ঐচ্ছিক)', 1000000),
+    written('budget-help', 'What, if anything, helped you manage household expenses?', 'পরিবারের খরচ সামলাতে কোনো বিষয় কাজে লেগে থাকলে তা কী?'),
+  ]),
+];

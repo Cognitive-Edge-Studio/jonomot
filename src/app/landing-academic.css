@@ -1,0 +1,86 @@
+.landing { --land-forest: #253f48; --land-muted: #65767a; --land-paper: #faf9f5; }
+.landing-nav { background: #faf9f5; border-bottom-color: #dde3de; }
+.landing-nav__brand { display: flex; flex-direction: column; gap: 4px; flex: none; }
+.landing-nav__brand > small { padding-left: 45px; color: #76827a; font-size: 7px; font-weight: 650; letter-spacing: .13em; }
+.landing-nav nav { gap: 23px; }
+.landing-hero { padding-top: 65px; }
+.landing-hero h1 { color: #253f48; font-size: clamp(45px, 4.7vw, 68px); letter-spacing: -.045em; line-height: 1.1; }
+.landing-hero h1 em { color: #526f68; font-style: normal; }
+.landing-kicker { color: #61726b; letter-spacing: .12em; }
+.landing-kicker > span { background: #b29a67; box-shadow: 0 0 0 5px #b29a6712; }
+.landing-hero__intro { font-size: 14px; color: #68787a; }
+.landing-hero__audience { display: flex; flex-wrap: wrap; gap: 9px 17px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #dfe5dc; color: #65766b; font-size: 10px; line-height: 1.6; }
+.landing-hero__audience > span { display: inline-flex; align-items: center; gap: 6px; }
+.landing-hero__audience svg { color: #8b967e; flex: none; }
+.landing-participant-scene__photo { border-radius: 20px; object-position: 40% 50%; }
+.landing-photo-question { border-radius: 9px; animation: none; box-shadow: 0 12px 30px #253f4812; }
+.landing-photo-question > strong { color: #253f48; font-size: 21px; }
+.landing-photo-question__answer { font-size: 10px; color: #607263; background: #f1f4ed; }
+.landing-photo-question__answer > span { width: 18px; height: 18px; border: 1px solid #d3ddcb; color: #647c57; background: transparent; }
+.landing-study-label { position: absolute; top: 35px; right: -5px; display: flex; align-items: center; gap: 11px; padding: 14px 18px; border: 1px solid #d4dbc9; border-radius: 8px; color: #53664a; background: #f4f5e8; box-shadow: 0 7px 22px #253f4810; }
+.landing-study-label small { display: block; margin-bottom: 4px; color: #8b927c; font-size: 8px; font-weight: 650; letter-spacing: .07em; }
+.landing-study-label strong { display: block; font-size: 11px; font-weight: 600; }
+.landing h2 { letter-spacing: -.035em; }
+.landing h2 em { font-style: normal; color: #6c7d68; }
+.landing-principles { padding-inline: 48px; }
+.landing-research-contexts { display: grid; grid-template-columns: .75fr 1.7fr; gap: 50px; padding-block: 49px; border-bottom: 1px solid #dfe4d9; }
+.landing-research-contexts__intro h2 { max-width: 260px; font-size: 27px; line-height: 1.22; }
+.landing-research-contexts__intro > p:last-child { max-width: 260px; margin: 13px 0 0; color: #7b8679; font-size: 11px; line-height: 1.8; }
+.landing-research-contexts__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 27px; }
+.landing-research-contexts__grid article { padding-left: 23px; border-left: 1px solid #dfe4d9; }
+.landing-research-contexts__grid article > svg { color: #7a8c6e; }
+.landing-research-contexts__grid h3 { margin: 17px 0 9px; color: #354e49; font-size: 13px; font-weight: 650; line-height: 1.5; }
+.landing-research-contexts__grid p { margin: 0; color: #778475; font-size: 11px; line-height: 1.85; }
+.landing-insight { border-radius: 10px; transform: none; }
+.landing-research__note { border-radius: 6px; transform: none; }
+.landing-intelligence { background: #243f45; }
+.landing-intelligence h2 em { color: #c1cfb4; }
+.landing-concept-note { background: #2d4c4e; border-color: #536a62; }
+.landing-engine-tabs button { background: #2a474a; border-color: #597068; }
+.landing-engine-tabs button:hover { background: #355554; }
+.landing-engine-panel__icon { background: #36524d; }
+.landing-engine-summary, .landing-data-sample { border-radius: 9px; }
+.landing-research-photo img, .landing-editorial-photo img { border-radius: 12px; }
+.landing-value-photo { margin: 0 0 29px; }
+.landing-value-photo img { display: block; width: 100%; height: 245px; object-fit: cover; object-position: center 40%; border: 1px solid #dfe4d9; border-radius: 12px; }
+.landing-value-photo figcaption { margin-top: 8px; color: #869080; font-size: 9px; }
+.landing-persona { border-radius: 10px; }
+.landing-footer { background: #253f48; }
+.landing-footer p { font-style: normal; }
+@media (max-width: 1100px) {
+  .landing-nav nav { gap: 16px; }
+  .landing-hero h1 { font-size: 55px; }
+  .landing-research-contexts { grid-template-columns: .65fr 1.6fr; gap: 30px; }
+  .landing-research-contexts__grid { gap: 18px; }
+  .landing-research-contexts__grid article { padding-left: 16px; }
+}
+@media (max-width: 840px) {
+  .landing-hero h1 { font-size: 61px; }
+  .landing-research-contexts { grid-template-columns: 1fr; gap: 28px; }
+  .landing-research-contexts__intro h2, .landing-research-contexts__intro > p:last-child { max-width: none; }
+  .landing-research-contexts__grid article:first-child { padding-left: 0; border-left: 0; }
+  .landing-principles { padding-inline: 0; }
+  .landing-value-photo img { height: 210px; }
+}
+@media (max-width: 620px) {
+  .landing-nav__brand > small { padding-left: 36px; font-size: 6px; }
+  .landing-hero { padding-top: 40px; }
+  .landing-hero h1 { font-size: clamp(42px, 11.5vw, 60px); }
+  .landing-hero__intro { font-size: 13px; }
+  .landing-hero__audience { gap: 9px 14px; font-size: 9px; margin-top: 25px; padding-top: 16px; }
+  .landing-participant-scene__photo { border-radius: 14px; }
+  .landing-photo-question > strong { font-size: 18px; }
+  .landing-study-label { top: 22px; right: -3px; gap: 8px; padding: 11px 13px; }
+  .landing-study-label small { font-size: 7px; }
+  .landing-study-label strong { font-size: 10px; }
+  .landing-research-contexts { padding-block: 34px; gap: 23px; }
+  .landing-research-contexts__intro h2 { font-size: 26px; }
+  .landing-research-contexts__grid { grid-template-columns: 1fr; gap: 22px; }
+  .landing-research-contexts__grid article, .landing-research-contexts__grid article:first-child { padding-left: 16px; border-left: 1px solid #dfe4d9; }
+  .landing-research-contexts__grid article > svg { float: left; margin: 2px 10px 0 0; }
+  .landing-research-contexts__grid h3 { margin-top: 0; font-size: 13px; }
+  .landing-research-contexts__grid p { clear: both; padding-top: 3px; }
+  .landing-value-photo { margin-bottom: 24px; }
+  .landing-value-photo img { height: 220px; }
+  .landing[lang="bn"] .landing-hero h1 { font-size: 40px; }
+}
